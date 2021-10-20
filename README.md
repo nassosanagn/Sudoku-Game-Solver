@@ -1,4 +1,4 @@
-# Vaccine Monitor App - System Programming Project
+# Sudoku Game Solver
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## About:
