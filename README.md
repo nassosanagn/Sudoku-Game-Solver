@@ -1,6 +1,8 @@
 # Sudoku Game Solver
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
+<p><img align="right" src="./pngegg.png" width="200" height="200" /></p>
+
 ## About:
 
 This is a Sudoku Game Solver Application that solves any 9x9 puzzle, by visualizing through the Backtracking Algorithm which is made using the PyGame library in Python.
