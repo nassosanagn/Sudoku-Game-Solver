@@ -13,7 +13,7 @@ from pygame.constants import MOUSEBUTTONDOWN
 #          [ 6, 9, 2, 3, 5, 1, 8, 7, 4 ],
 #          [ 7, 4, 5, 0, 8, 6, 3, 1, 0 ] ]
 
-# board2 = [ [ 3, 1, 6, 5, 7, 8, 4, 9, 2 ],
+# board = [ [ 3, 1, 6, 5, 7, 8, 4, 9, 2 ],
 #          [ 5, 2, 9, 1, 3, 4, 7, 6, 8 ],
 #          [ 4, 8, 7, 6, 2, 9, 5, 3, 1 ],
 #          [ 2, 6, 3, 0, 1, 5, 9, 8, 7 ],
@@ -37,54 +37,54 @@ pygame.init()
 
 dis_width = 450
 dis_height = 500
- 
+
+strike_img = pygame.image.load(r'C:\Users\user\Desktop\GAMES\sudoku_game\strike.png')    # Snake's head image
+
 dis = pygame.display.set_mode((dis_width,dis_height))
 pygame.display.set_caption('Sudoku by Nassos')
 myFont = pygame.font.SysFont("Arial", 25, True)
 clock = pygame.time.Clock()
 
-solved_board = [ [ 1, 5, 6, 2, 6, 2, 3, 4, 8 ],
-                [ 2, 5, 9, 1, 4, 6, 2, 9, 1 ],
-                [ 3, 7, 9, 5, 8, 1, 4, 6, 2 ],
-                [ 9, 3, 7, 9, 2, 5, 1, 4, 1 ],
-                [ 5, 8, 1, 5, 2, 7, 9, 3, 5 ],
-                [ 1, 5, 7, 4, 8, 8, 1, 5, 7 ],
-                [ 9, 7, 2, 2, 6, 1, 5, 4, 1 ],
-                [ 6, 4, 4, 1, 5, 2, 6, 3, 9 ],
-                [ 7, 9, 2, 8, 7, 4, 2, 1, 2 ] ]
+solved_board = [ [ 3, 1, 6, 5, 7, 8, 4, 9, 2], 
+                [ 5, 2, 9, 1, 3, 4, 7, 6, 8 ],
+                [ 4, 8, 7, 6, 2, 9, 5, 3, 1 ],
+                [ 2, 6, 3, 4, 1, 5, 9, 8, 7 ],
+                [ 9, 7, 4, 8, 6, 3, 1, 2, 5 ],
+                [ 8, 5, 1, 7, 9, 2, 6, 4, 3 ],
+                [ 1, 3, 8, 9, 4, 7, 2, 5, 6 ],
+                [ 6, 9, 2, 3, 5, 1, 8, 7, 4 ],
+                [ 7, 4, 5, 2, 8, 6, 3, 1, 9 ]]
 
-board = [ [ 1, 0, 6, 0, 0, 2, 3, 0, 0 ],
-         [ 0, 5, 0, 0, 0, 6, 0, 9, 1 ],
-         [ 0, 0, 9, 5, 0, 1, 4, 6, 2 ],
-         [ 0, 3, 7, 9, 0, 5, 0, 0, 0 ],
-         [ 5, 8, 1, 0, 2, 7, 9, 0, 0 ],
-         [ 0, 0, 0, 4, 0, 8, 1, 5, 7 ],
-         [ 0, 0, 0, 2, 6, 0, 5, 4, 0 ],
-         [ 0, 0, 4, 1, 5, 0, 6, 0, 9 ],
-         [ 9, 0, 0, 8, 7, 4, 2, 1, 0 ] ]
+# board = [ [ 3, 1, 6, 5, 7, 8, 4, 9, 2 ],
+#          [ 5, 2, 9, 1, 3, 4, 7, 6, 8 ],
+#          [ 4, 8, 7, 6, 2, 9, 5, 3, 1 ],
+#          [ 2, 6, 3, 0, 1, 5, 9, 8, 7 ],
+#          [ 9, 7, 4, 8, 6, 0, 1, 2, 5 ],
+#          [ 8, 5, 1, 7, 9, 2, 6, 4, 3 ],
+#          [ 1, 3, 8, 0, 4, 7, 2, 0, 6 ],
+#          [ 6, 9, 2, 3, 5, 1, 8, 7, 4 ],
+#          [ 7, 4, 5, 0, 8, 6, 3, 1, 0 ] ]
 
-
-board2 = [ [ 1, 0, 6, 0, 0, 2, 3, 0, 0 ],
-         [ 0, 5, 0, 0, 0, 6, 0, 9, 1 ],
-         [ 0, 0, 9, 5, 0, 1, 4, 6, 2 ],
-         [ 0, 3, 7, 9, 0, 5, 0, 0, 0 ],
-         [ 5, 8, 1, 0, 2, 7, 9, 0, 0 ],
-         [ 0, 0, 0, 4, 0, 8, 1, 5, 7 ],
-         [ 0, 0, 0, 2, 6, 0, 5, 4, 0 ],
-         [ 0, 0, 4, 1, 5, 0, 6, 0, 9 ],
-         [ 9, 0, 0, 8, 7, 4, 2, 1, 0 ] ]
-
+# board2 = [ [ 3, 1, 6, 5, 7, 8, 4, 9, 2 ],
+#          [ 5, 2, 9, 1, 3, 4, 7, 6, 8 ],
+#          [ 4, 8, 7, 6, 2, 9, 5, 3, 1 ],
+#          [ 2, 6, 3, 0, 1, 5, 9, 8, 7 ],
+#          [ 9, 7, 4, 8, 6, 0, 1, 2, 5 ],
+#          [ 8, 5, 1, 7, 9, 2, 6, 4, 3 ],
+#          [ 1, 3, 8, 0, 4, 7, 2, 0, 6 ],
+#          [ 6, 9, 2, 3, 5, 1, 8, 7, 4 ],
+#          [ 7, 4, 5, 0, 8, 6, 3, 1, 0 ] ]
 
 def backtrack():
 
     for i in range(9):
         for j in range(9):
-            if board2[i][j] == 0:    # It must be solved
+            if board[i][j] == 0:    # It must be solved
                 flag = False 
                 
                 for z in range(9):
                     if isSafe(i,j,z+1) == True:
-                        board2[i][j] = z + 1;
+                        board[i][j] = z + 1;
                         flag = True
 
                         if isSolved() == True:
@@ -106,8 +106,8 @@ def backtrack():
 # def backtrack2(): 
 #     for i in range(9):
 #         for j in range(9):
-#             if ((board2[i][j] == 0) or (board[i][j] == 0 and (isSafe(i,j, board2[i][j]) == False))):    # It must be solved
-#                 print("gia row " , i , " col " ,j , " num: " , board2[i][j])
+#             if ((board[i][j] == 0) or (board[i][j] == 0 and (isSafe(i,j, board[i][j]) == False))):    # It must be solved
+#                 print("gia row " , i , " col " ,j , " num: " , board[i][j])
 #                 for z in range(9):
 #                     if isSafe(i,j,z+1) == True:
 
@@ -125,9 +125,8 @@ def backtrack():
 def isSolved(boole = False):
     for i in range(9):
         for j in range(9):
-            if (isSafe(i, j, board2[i][j]) == False) or board2[i][j] == 0:
-                if boole == True:
-                    print("row " , i , " col " ,j , " num: " , board2[i][j])
+            if isSafe(i, j, board[i][j]) == False or board[i][j] == 0:
+                print("row " , i , " col " ,j , " num: " , board[i][j])
                 return False
     return True
 
@@ -136,12 +135,12 @@ def isSafe(row, col, num):
    
     # Check if we find the same num in the similar row , we return false
     for x in range(9):
-        if board2[row][x] == num:
+        if board[row][x] == num and x != col:
             return False
  
     # Check if we find the same num in the similar column , we retutn false
     for x in range(9):
-        if board2[x][col] == num:
+        if board[x][col] == num and x != row:
             return False
  
     # Check if we find the same num in the particular 3*3 matrix, return false
@@ -149,7 +148,7 @@ def isSafe(row, col, num):
     startCol = col - col % 3
     for i in range(3):
         for j in range(3):
-            if board2[i + startRow][j + startCol] == num:
+            if board[i + startRow][j + startCol] == num and i + startRow != row and j + startCol != col:
                 return False
     return True
 
@@ -171,24 +170,35 @@ def drawGrid():
             rect = pygame.Rect(x, y, blockSize, blockSize)
             pygame.draw.rect(dis, black, rect, 1)
 
-def displayBoard(startTime):
+def displayBoard(tempBoard, strikes):
 
     dis.fill(white)
     drawGrid()
-    displayNumbers()
+    displayNumbers(tempBoard)
+    
+    strike_width = 5
+    # Print the strikes
+    for x in range(strikes):
+        dis.blit(pygame.transform.scale(strike_img, (30, 30)), (strike_width, dis_height - 35))
+        strike_width += 35
+
     pygame.display.update()
 
 def gameLoop():
     
+    strikes = 0
     game_over = False
     game_close = False
     startTime = time.time()
 
-    displayBoard(startTime)
+    white_rect = pygame.Rect(0, 455, dis_width, 455)
+    pygame.draw.rect(dis, white, white_rect)
+
+    displayBoard(board, strikes)
     while not game_over:
-         
-        white_rect = pygame.Rect(0, 455, dis_width, 455)
-        pygame.draw.rect(dis, white, white_rect)
+        
+        small_white_rect = pygame.Rect(dis_width - 100, 455, dis_width, 455)
+        pygame.draw.rect(dis, white, small_white_rect)
         randNumLabel = myFont.render("Time: " + str(time.time() - startTime), 1, black)
         dis.blit(randNumLabel, (340, 465))
         pygame.display.update()
@@ -217,9 +227,9 @@ def gameLoop():
                 y_block = (pos[1] // 50) * 50
                 if y_block > 400:
                     continue
-                displayBoard(startTime)
-                pygame.draw.rect(dis, red, (x_block, y_block, 50, 50), 4)
-                pygame.display.update()
+                displayBoard(board, strikes)
+                pygame.draw.rect(dis, red, (x_block, y_block, 50, 50), 4)       # Draw the small red rectangle 
+                # pygame.display.update()
                 print("to x einai: ",x_block , " kai to y einai: " , y_block)
 
             if event.type == pygame.KEYDOWN:        # Get the number pressed
@@ -242,54 +252,71 @@ def gameLoop():
                     num = 8
                 if event.key == pygame.K_9:
                     num = 9
+                if event.key == pygame.K_SPACE:         # Give the answer
+                    print("PATHSES SPACE \n")
+                    displayBoard(solved_board, strikes)
+                    # game_over = True
+                    continue    
                 if num == -10:
-                    pass
-                print("patithike to: " , num)
+                    print("\nPlease enter a number [1-9] \n")
+                    continue
+
                 solved_board_i = posx // 50;
                 solved_board_j = posy // 50;
-                print("to x einai: ",posx , " kai to y einai: " , posy)
-                print("solved board: " , solved_board[solved_board_j][solved_board_i], " to i einai: " , solved_board_j , " kai to j einai: ", solved_board_i)
-                
+                      
                 # If the number is correct
                 if num == solved_board[solved_board_j][solved_board_i]:
-                    board[solved_board_j][solved_board_i] = num
-                    displayBoard(startTime)
-                else:                   # Get a strike
-                    pass
+                    board[solved_board_j][solved_board_i] = num             # Enter the number
+                    displayBoard(board, strikes)
+
+                    if isSolved():
+                        print("\nCongrats you solved the board!\n")
+                else:                               # Get a strike
+                    strikes += 1
+                    displayBoard(board, strikes)
+                    if strikes == 3:
+                        game_over = True
 
                 
-                
-
+def sameBoards():
+    for i in range(9):
+        for j in range(9):
+            if board[i][j] != solved_board[i][j]:
+                return False
+    return True
         
           
 # ---------------------------------------------------------------- MAIN ---------------------------------------------------------------- #
 
-def displayNumbers():
+def displayNumbers(tempBoard):
     width = 19;
     height = 12;
     for i in range(9):
         for j in range(9):
-            if board[i][j] != 0:
-                randNumLabel = myFont.render(str(board[i][j]), 1, black)
+            if tempBoard[i][j] != 0:
+                randNumLabel = myFont.render(str(tempBoard[i][j]), 1, black)
                 dis.blit(randNumLabel, (width, height))
             width+=50
         height+=50
         width = 19
 
 
-for i in range(9):
-    print(board[i])
-
 # backtrack()
-
 print( "----------------------------------------------------------------" )
-# for i in range(9):
-#     print(board2[i])
 
-#Check if board is solved or not
-if isSolved(True):
-    print("The board is solved!")
-else:
-    print("The board is not solved!")
+# Open the file and read the input.txt
+with open('input.txt') as f:
+    lines = f.readlines()
+
+# Initialize the board
+board = [[]] * 9
+
+for i in range(9):
+        board[i] = lines[i].split()
+
+# Convert everything in the list into integers
+for i in range(9):
+    for j in range(9):
+        board[i][j] = int(board[i][j])
 
 gameLoop()
