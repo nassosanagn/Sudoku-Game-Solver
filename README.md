@@ -15,7 +15,7 @@ OR you can download and extract the zip file and it's contents.
 You can run the sudoku.py file directly in your terminal by using:
 
     python sudoku.py < input.txt  
-OR
+**OR**
 
     python3 sudoku.py < input.txt
 
