@@ -10,12 +10,11 @@ You can clone this repository by using
 OR you can download and extract the zip file and it's contents.
 
 ## Execution
-  python sudoku.py < input.txt
-  
+
 You can run the sudoku.py file directly in your terminal by using:
-  
+    python sudoku.py < input.txt  
 OR
-  python3 sudoku.py < input.txt
+    python3 sudoku.py < input.txt
 
 Where "input.txt" contains the 9x9 puzzle that you want to solve.
  
