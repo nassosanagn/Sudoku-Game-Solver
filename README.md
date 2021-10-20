@@ -1,7 +1,7 @@
 # Sudoku Game Solver
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
-<p><img align="right" src="./pngegg.png" width="200" height="200" /></p>
+<p><img align="right" src="./pngegg.png" width="250" height="250" /></p>
 
 ## About:
 
