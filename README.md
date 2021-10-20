@@ -21,3 +21,10 @@ OR
 
 Where "input.txt" contains the 9x9 sudoku puzzle that you want to solve.
  
+ ## Playing
+ 
+ - You can enter a value in the puzzle by clicking in a cell and entering a value 1-9.
+ - Correct answers will be permanently displayed while incorrect answers will be removed.
+ - If at any point the player decides to solve the board, the Spacebar key can be pressed. This will commence a visual which will demonstrate how the backtracking algorithm works and how it is being applied in order to solve the board.
+ - You have a total of 3 strikes. Then it's game over.
+
