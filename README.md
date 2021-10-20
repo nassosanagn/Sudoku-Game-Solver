@@ -10,9 +10,9 @@ You can clone this repository by using
 OR you can download and extract the zip file and it's contents.
 
 ## Execution
-
-You can run the sudoku.py file directly in your terminal by using:
   python sudoku.py < input.txt
+You can run the sudoku.py file directly in your terminal by using:
+  
 OR
   python3 sudoku.py < input.txt
 
