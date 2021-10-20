@@ -19,5 +19,5 @@ OR
 
     python3 sudoku.py < input.txt
 
-Where "input.txt" contains the 9x9 puzzle that you want to solve.
+Where "input.txt" contains the 9x9 sudoku puzzle that you want to solve.
  
