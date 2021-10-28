@@ -38,7 +38,7 @@ pygame.init()
 dis_width = 450
 dis_height = 500
 
-strike_img = pygame.image.load(r'C:\Users\user\Desktop\GAMES\sudoku_game\strike.png')    # Snake's head image
+strike_img = pygame.image.load(r'./strike.png')    # Snake's head image
 
 dis = pygame.display.set_mode((dis_width,dis_height))
 pygame.display.set_caption('Sudoku by Nassos')
