@@ -1,4 +1,4 @@
-<p><img align="right" src="./pngegg.png" width="200" height="200" /></p>
+<p><img align="right" src="./sudd.png" width="200" height="200" /></p>
 
 # Sudoku Game Solver
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
